@@ -6,8 +6,16 @@
   <title>Visuals by Haris</title>
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       font-family:Arial,sans-serif;
@@ -23,20 +31,25 @@
       justify-content:center;
       text-align:center;
       padding:30px;
+
       background:
       linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),
-      url("photos/uphillviewkumrat.jpg");
+      url("photos/kumrat_valley (1).jpg");
+
       background-size:cover;
       background-position:center;
     }
 
-    .hero{max-width:850px}
+    .hero{
+      max-width:850px;
+    }
 
     .hero h1{
       font-size:72px;
       font-weight:700;
       letter-spacing:2px;
       margin-bottom:18px;
+
       background:linear-gradient(to right,#ffffff,#b8c7ff);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
@@ -54,55 +67,116 @@
       display:inline-flex;
       align-items:center;
       gap:12px;
+
       margin-top:35px;
       padding:14px 28px;
+
       border-radius:60px;
+
       text-decoration:none;
       color:white;
       font-weight:bold;
       font-size:15px;
-      background:linear-gradient(135deg,#833AB4,#C13584,#E1306C,#FD1D1D,#F77737);
-      box-shadow:0 10px 35px rgba(225,48,108,0.35);
+
+      background:linear-gradient(
+      135deg,
+      #833AB4,
+      #C13584,
+      #E1306C,
+      #FD1D1D,
+      #F77737);
+
+      box-shadow:
+      0 10px 35px rgba(225,48,108,0.35);
+
       transition:0.35s;
     }
 
     .insta-btn:hover{
       transform:translateY(-3px) scale(1.03);
-      box-shadow:0 15px 40px rgba(225,48,108,0.5);
+
+      box-shadow:
+      0 15px 40px rgba(225,48,108,0.5);
     }
 
     .section-title{
       text-align:center;
-      padding:65px 20px 30px;
+      padding:65px 20px 25px;
+
       font-size:34px;
       letter-spacing:2px;
+    }
+
+    .filters{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+
+      padding:0 20px 30px;
+    }
+
+    .filter-btn{
+      background:#181818;
       color:white;
+
+      border:1px solid #2d2d2d;
+
+      padding:11px 22px;
+
+      border-radius:40px;
+
+      cursor:pointer;
+
+      transition:0.3s;
+
+      font-size:14px;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active{
+      background:white;
+      color:black;
     }
 
     .gallery{
       max-width:1450px;
       margin:auto;
+
       padding:20px;
+
       columns:3 300px;
       column-gap:16px;
     }
 
     .photo{
       margin-bottom:16px;
+
       border-radius:20px;
+
       overflow:hidden;
+
       cursor:pointer;
+
       background:#161616;
+
       break-inside:avoid;
+
       position:relative;
+
       min-height:220px;
     }
 
     .photo img{
       width:100%;
       display:block;
+
       opacity:0;
-      transition:opacity 0.5s ease, transform 0.45s ease, filter 0.45s ease;
+
+      transition:
+      opacity 0.5s ease,
+      transform 0.45s ease,
+      filter 0.45s ease;
     }
 
     .photo img.loaded{
@@ -116,16 +190,23 @@
 
     .loader{
       position:absolute;
+
       top:50%;
       left:50%;
+
       width:34px;
       height:34px;
+
       margin-top:-17px;
       margin-left:-17px;
+
       border:3px solid rgba(255,255,255,0.25);
       border-top:3px solid white;
+
       border-radius:50%;
+
       animation:spin 0.9s linear infinite;
+
       z-index:2;
     }
 
@@ -134,45 +215,69 @@
     }
 
     @keyframes spin{
-      from{transform:rotate(0deg)}
-      to{transform:rotate(360deg)}
+      from{
+        transform:rotate(0deg);
+      }
+
+      to{
+        transform:rotate(360deg);
+      }
     }
 
     .lightbox{
       position:fixed;
       inset:0;
+
       background:rgba(0,0,0,0.88);
+
       display:none;
+
       align-items:center;
       justify-content:center;
+
       z-index:999;
+
       padding:25px;
     }
 
-    .lightbox.active{display:flex}
+    .lightbox.active{
+      display:flex;
+    }
 
     .lightbox-content{
       max-width:95vw;
       max-height:90vh;
+
       text-align:center;
     }
 
     .lightbox img{
       max-width:100%;
       max-height:78vh;
+
       border-radius:14px;
-      box-shadow:0 20px 60px rgba(0,0,0,0.7);
+
+      box-shadow:
+      0 20px 60px rgba(0,0,0,0.7);
     }
 
-    .lightbox-actions{margin-top:18px}
+    .lightbox-actions{
+      margin-top:18px;
+    }
 
-    .download-btn,.close-btn{
+    .download-btn,
+    .close-btn{
+
       display:inline-block;
+
       margin:5px;
       padding:12px 22px;
+
       border-radius:40px;
+
       text-decoration:none;
       font-weight:bold;
+
       transition:0.3s;
     }
 
@@ -181,20 +286,28 @@
       color:black;
     }
 
-    .download-btn:hover{transform:translateY(-2px)}
+    .download-btn:hover{
+      transform:translateY(-2px);
+    }
 
     .close-btn{
       background:#1f1f1f;
       color:white;
+
       border:1px solid #444;
+
       cursor:pointer;
     }
 
     footer{
       margin-top:70px;
+
       padding:45px 20px;
+
       border-top:1px solid #1f1f1f;
+
       text-align:center;
+
       color:#8d8d8d;
     }
 
@@ -204,99 +317,196 @@
     }
 
     @media(max-width:900px){
-      .hero h1{font-size:46px}
-      .hero p{font-size:15px}
-      .gallery{columns:1}
+
+      .hero h1{
+        font-size:46px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .gallery{
+        columns:1;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
 <header>
+
   <div class="hero">
+
     <h1>Visuals by Haris</h1>
 
     <p>
       A collection of phone photography —
       landscapes, roads, rivers, valleys, evening skies,
-      textures, shadows, rain, and quiet moments captured along the way.
+      textures, shadows, rain, nature, and quiet moments captured along the way.
     </p>
 
-    <a class="insta-btn" href="https://instagram.com/harisvisuals" target="_blank">
+    <a
+      class="insta-btn"
+      href="https://instagram.com/harisvisuals"
+      target="_blank">
+
       <span>📸</span>
       <span>@harisvisuals</span>
+
     </a>
+
   </div>
+
 </header>
 
-<h2 class="section-title">Gallery</h2>
+<h2 class="section-title">Collections</h2>
+
+<div class="filters">
+
+  <button class="filter-btn active" onclick="filterSelection('all')">
+    All
+  </button>
+
+  <button class="filter-btn" onclick="filterSelection('landscape')">
+    Landscapes
+  </button>
+
+  <button class="filter-btn" onclick="filterSelection('night')">
+    Nightscapes
+  </button>
+
+  <button class="filter-btn" onclick="filterSelection('sunset')">
+    Sunsets
+  </button>
+
+  <button class="filter-btn" onclick="filterSelection('nature')">
+    Nature
+  </button>
+
+  <button class="filter-btn" onclick="filterSelection('misc')">
+    Miscellaneous
+  </button>
+
+</div>
 
 <section class="gallery">
 
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratnaturalcoolingpotraitview.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/nightkumratvalley.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/uphillviewkumrat.jpg" alt="Photo"></div>
+  <!-- LANDSCAPES -->
 
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratviewfromlcwindow.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumrathillsvalleycow.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/greenhillskumrat2.jpg" alt="Photo"></div>
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (1).jpg"></div>
 
-  <div class="photo"><div class="loader"></div><img data-src="photos/greenhillskumrat.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumrathillsviewwithcarsplashoutside.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/greenerykumrat.jpg" alt="Photo"></div>
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (2).jpg"></div>
 
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratvalleystonescottagejungle.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratvalleystones.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratjunglewideview.jpg" alt="Photo"></div>
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (3).jpg"></div>
 
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratjunglewhitestonespotraitview2.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratjunglewhitestonespotraitview.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/junglekumratwhitestones.jpg" alt="Photo"></div>
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (4).jpg"></div>
 
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratthalriver.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratvalleyevening2.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratrivereveing.jpg" alt="Photo"></div>
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (5).jpg"></div>
 
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratriver2.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/junglecottage.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/eveninginkumrat.jpg" alt="Photo"></div>
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (6).jpg"></div>
 
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratvalleyevening3.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratvalley.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/sunsetkumratvalley.jpg" alt="Photo"></div>
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (7).jpg"></div>
 
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratvalleyevening.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/kumratjungle.jpg" alt="Photo"></div>
-  <div class="photo"><div class="loader"></div><img data-src="photos/cardrivenightshot.jpg" alt="Photo"></div>
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (8).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (9).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (10).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (11).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (12).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (13).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (14).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (15).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (16).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (17).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (18).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (19).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (20).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (21).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (22).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (23).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (24).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (25).jpg"></div>
+
+  <div class="photo landscape"><div class="loader"></div><img data-src="photos/kumrat_valley (26).jpg"></div>
+
+  <!-- NIGHTSCAPES -->
+
+  <div class="photo night">
+    <div class="loader"></div>
+    <img data-src="photos/cardrive_night.jpg">
+  </div>
 
 </section>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+
   <div class="lightbox-content" onclick="event.stopPropagation()">
+
     <img id="lightbox-img" src="">
+
     <div class="lightbox-actions">
-      <a id="download-link" class="download-btn" href="" download>Download Photo</a>
-      <button class="close-btn" onclick="closeLightbox()">Close</button>
+
+      <a id="download-link" class="download-btn" href="" download>
+        Download Photo
+      </a>
+
+      <button class="close-btn" onclick="closeLightbox()">
+        Close
+      </button>
+
     </div>
+
   </div>
+
 </div>
 
 <footer>
-  <p>© 2026 Visuals by Haris</p>
+
+  <p>
+    © 2026 Visuals by Haris
+  </p>
+
   <br>
+
   <p>
     Instagram:
-    <a href="https://instagram.com/harisvisuals" target="_blank">@harisvisuals</a>
+    <a href="https://instagram.com/harisvisuals" target="_blank">
+      @harisvisuals
+    </a>
   </p>
+
 </footer>
 
 <script>
+
   const images = document.querySelectorAll(".photo img");
 
   const observer = new IntersectionObserver((entries) => {
+
     entries.forEach(entry => {
+
       if(entry.isIntersecting){
+
         const img = entry.target;
 
         if(!img.src){
@@ -304,35 +514,93 @@
         }
 
         img.onload = () => {
+
           img.classList.add("loaded");
+
           img.parentElement.classList.add("loaded");
+
         };
 
         img.onclick = () => {
+
           openLightbox(img.src);
+
         };
 
         observer.unobserve(img);
+
       }
+
     });
-  }, {
-    rootMargin: "300px"
+
+  },{
+
+    rootMargin:"300px"
+
   });
 
   images.forEach(img => {
+
     observer.observe(img);
+
   });
 
   function openLightbox(src){
+
     document.getElementById("lightbox-img").src = src;
+
     document.getElementById("download-link").href = src;
+
     document.getElementById("lightbox").classList.add("active");
+
   }
 
   function closeLightbox(){
+
     document.getElementById("lightbox").classList.remove("active");
+
     document.getElementById("lightbox-img").src = "";
+
   }
+
+  function filterSelection(category){
+
+    const photos = document.querySelectorAll(".photo");
+
+    const buttons = document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(btn=>{
+
+      btn.classList.remove("active");
+
+    });
+
+    event.target.classList.add("active");
+
+    photos.forEach(photo=>{
+
+      if(category === "all"){
+
+        photo.style.display = "block";
+
+      }
+
+      else if(photo.classList.contains(category)){
+
+        photo.style.display = "block";
+
+      }
+
+      else{
+
+        photo.style.display = "none";
+
+      }
+
+    });
+
+  }
+
 </script>
 
 </body>
